@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<h1> GUNTING BATU KERTAS MAIN BERDUA </h1>
+</head>
+
+<body>
+	<div id="player1">
+	<button type="button" onclick="gt()"> GUNTING </button>
+	<button type="button" onclick="bt()"> BATU </button>
+	<button type="button" onclick="kt()"> KERTAS </button>
+	</div>
+	
+	<div id="player2">
+	<button type="button" onclick="gun()"> GUNTING </button>
+	<button type="button" onclick="ba()"> BATU </button>
+	<button type="button" onclick="ker()"> KERTAS </button>
+	</div>
+	<button id="hasil" type="button" onclick="hs()"> HASiL </button>
+	<hr><hr>
+
+	<p id="pa1">---------</p>
+	<p id="pa2">---------</p>
+	<hr><p id="pa3">---------</p><hr>
+	
+<script>
+	var p1 = "0"
+	var p2 = "1"
+
+function gt(){
+	document.getElementById("pa1").innerHTML="PLAYER 1 SUDAH MEMILIH";
+	p1="gunting"	
+	};
+
+function bt(){
+	document.getElementById("pa1").innerHTML="PLAYER 1 SUDAH MEMILIH";
+	p1="batu"
+	};
+
+function kt(){
+	document.getElementById("pa1").innerHTML="PLAYER 1 SUDAH MEMILIH";
+	p1="kertas"	
+	};
+
+function gun(){
+	document.getElementById("pa2").innerHTML="PLAYER 2 SUDAH MEMILIH";
+	p2="gunting"	
+	};
+
+function ba(){
+	document.getElementById("pa2").innerHTML="PLAYER 2 SUDAH MEMILIH";
+	p2="batu"
+	};
+
+function ker(){
+	document.getElementById("pa2").innerHTML="PLAYER 2 SUDAH MEMILIH";
+	p2="kertas"	
+	};
+
+var  data = function(play1,play2){
+	if (play1===play2){return "Hasil Imbang";}
+	
+	if (play1==="gunting"){
+		if(play2==="batu"){return "Play 2 Wins"  ;}
+	else{return "play 1 win";};}
+	
+	if (play1==="batu"){
+		if(play2==="kertas"){return "Play 2 Wins"  ;}
+	else{return "play 1 win";};}
+
+	if (play1==="kertas"){
+		if(play2==="gunting"){return "Play 2 Wins"  ;}
+	else{return "play 1 win";};}
+
+	};   
+function hs(){
+	var hasil = data(p1,p2);
+	document.getElementById('pa3').innerHTML=hasil  ;}  
+	
+	</script>
+</body>
+</html>
